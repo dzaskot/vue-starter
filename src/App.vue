@@ -6,24 +6,16 @@
           <a @click="logOut()">Wyloguj </a>
       </div>
       <div v-else>
-          <label>Zaloguj się emailem </label>
-          <input type="email" v-model = "email">
-          <button @click="logIn()"> Zaloguj</button>
+          <login-form @login="logIn($event)"></login-form>
       </div>
-
-      <!--<div v-if="email.length < 10">Ale masz krótki adres!</div>
-      <div v-else-if="email.length < 15">Twój adres e-mail jest w sam raz.</div>
-      <div v-else>Twój adres e-mail jest stanowczo za długi.</div>
-
-      <input type="email" v-model = "email">
-
-      <button @click="alertMyEmail()">Wyświetl mój e-mail w alercie</button>-->
   </div>
 </template>
 
 <script>
 import "milligram";
+import LoginForm from "./LoginForm";
 export default {
+  components: {LoginForm},
   data() {
     return {
       email: '',
@@ -31,8 +23,8 @@ export default {
     };
   },
   methods: {
-      logIn() {
-          this.authenticatedUserName = this.email;
+      logIn(username) {
+          this.authenticatedUserName = username;
         },
     logOut(){
         this.authenticatedUserName = '';
