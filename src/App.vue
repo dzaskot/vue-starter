@@ -14,11 +14,11 @@
 <script>
 import "milligram";
 import LoginForm from "./LoginForm";
+
 export default {
   components: {LoginForm},
   data() {
     return {
-      email: '',
       authenticatedUserName: ''
     };
   },
@@ -28,7 +28,6 @@ export default {
         },
     logOut(){
         this.authenticatedUserName = '';
-        this.email = '';
     }
   }
 }
