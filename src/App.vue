@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import "milligram";
 export default {
   data() {
     return {
@@ -34,12 +35,13 @@ export default {
           this.authenticatedUserName = this.email;
         },
     logOut(){
-        this.email = '';
         this.authenticatedUserName = '';
+        this.email = '';
     }
   }
 }
 </script>
 
 <style>
+
 </style>
